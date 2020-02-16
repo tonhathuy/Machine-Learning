@@ -9,7 +9,7 @@ Y = datafame.values[:, 4]
 # print(Y)
 
 plt.scatter(X, Y, marker='o')
-# plt.show()
+plt.show()
 
 def predict(new_radio, weight, bias):
     return weight*new_radio + bias
@@ -43,11 +43,13 @@ def train(X, Y, weight, bias, learning_rate, iter):
 
     return weight, bias, coshis
 
-weight, bias, cost = train(X, Y, 0.03, 0.0014, 0.01, 30)
+weight, bias, cost = train(X, Y, 0.03, 0.0014, 0.001, 60)
 
 print(weight, bias)
 print(cost)
 
-loop = [i for i in range(30)]
+loop = [i for i in range(60)]
 plt.plot(loop, cost)
+plt.show()
+plt.plot(X[loop], weight*X[loop] + bias, 'r')
 plt.show()
