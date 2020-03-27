@@ -12,7 +12,7 @@ print('Z float: ',Z)
 # define criteria, number of clusters(K) and apply kmeans()
 # https://docs.opencv.org/3.4/d9/d5d/classcv_1_1TermCriteria.html
 criteria = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 10, 1.0)
-K = 2
+K = 100
 ret,label,center=cv2.kmeans(Z,K,None,criteria,10,cv2.KMEANS_RANDOM_CENTERS)
 
 # Now convert back into uint8, and make original image
